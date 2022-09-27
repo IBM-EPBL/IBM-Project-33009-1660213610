@@ -1,0 +1,51 @@
+                                                     
+                                               
+                      							DHT22-Temperature
+
+
+
+
+# Read UV 3 time, take the average and converted it to mv
+def readSensorUV():
+    
+    numofReadings = 3
+    dataSensorUV = 0
+    for i in range(numofReadings):
+        dataSensorUV += Readchannel(0)
+        time.sleep(0.2)
+    dataSensorUV /= numofReadings
+    dataSensorUV = (dataSensorUV * (3.3 / 11023.0))*1000;
+    return round(dataSensorUV)
+
+
+    readsensorUV()
+
+Output:128
+
+
+    def indexCalculate(dataSensorUV):
+        if dataSensorUV < 227: indexUV = 0
+        elif (227 <= dataSensorUV) & (dataSensorUV < 318): indexUV = 1
+        elif (318 <= dataSensorUV) & (dataSensorUV < 408): indexUV = 2
+        elif (408 <= dataSensorUV) & (dataSensorUV < 503): indexUV = 3
+        elif (503 <= dataSensorUV) & (dataSensorUV < 606): indexUV = 4
+        elif (606 <= dataSensorUV) & (dataSensorUV < 696): indexUV = 5
+        elif (696 <= dataSensorUV) & (dataSensorUV < 795): indexUV = 6
+	elif (795 <= dataSensorUV) & (dataSensorUV < 881): indexUV = 7
+	elif (881 <= dataSensorUV) & (dataSensorUV < 976): indexUV = 8
+	elif (976 <= dataSensorUV) & (dataSensorUV < 1079): indexUV = 9
+	elif (1079 <= dataSensorUV) & (dataSensorUV < 1170): indexUV = 10
+	elif: indexUV = 11
+	return indexUv
+
+
+        indexCalcilate(128)
+
+
+
+Output: 0
+
+
+
+
+     
